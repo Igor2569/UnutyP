@@ -47,7 +47,7 @@ namespace Game.Systems
 
 			if (Input.GetKey(KeyCode.Space))
 			{
-				SetBrakeTorque(3000);
+				SetBrakeTorque(9000);
 			}
 			else
 			{
