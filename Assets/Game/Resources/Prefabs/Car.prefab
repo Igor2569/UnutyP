@@ -403,7 +403,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3710222393881890496}
-  - component: {fileID: 7741469159143157920}
+  - component: {fileID: 1410064212}
+  - component: {fileID: 1410064213}
+  - component: {fileID: 1410064214}
+  - component: {fileID: 5690001269709802853}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -418,7 +421,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4050577955485111418}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.13701226, z: 0, w: -0.9905694}
   m_LocalPosition: {x: 24.852734, y: 0.30340016, z: 8.704733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -427,8 +430,40 @@ Transform:
   - {fileID: 1305438235}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7741469159143157920
+  m_LocalEulerAnglesHint: {x: 0, y: -154.5, z: 0}
+--- !u!54 &1410064212
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050577955485111418}
+  serializedVersion: 2
+  m_Mass: 3000
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 36
+  m_CollisionDetection: 0
+--- !u!114 &1410064213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050577955485111418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e4b4e5dc7c87a49bedf519a0e7191d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody: {fileID: 1410064212}
+  camera: {fileID: 1305438234}
+  scene1: SampleScene
+  scene2: Shop
+--- !u!114 &1410064214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -440,30 +475,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506312bd34dcdeb478ad51791371f849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 0}
+  rigidbody: {fileID: 1410064212}
+  camera: {fileID: 1305438234}
+  cars: []
   wheelFL:
     transform: {fileID: 7350199662973251180}
     collider: {fileID: 7397888136711412754}
     isCanMotoring: 0
-    isCanSteering: 1
+    isCanSteering: 0
   wheelFR:
     transform: {fileID: 5731521672361752734}
     collider: {fileID: 4452951462884028319}
     isCanMotoring: 0
-    isCanSteering: 1
+    isCanSteering: 0
   wheelBL:
     transform: {fileID: 7413764584569129348}
     collider: {fileID: 6501736490411630993}
-    isCanMotoring: 1
+    isCanMotoring: 0
     isCanSteering: 0
   wheelBR:
-    transform: {fileID: 5369922833247863309}
+    transform: {fileID: 6281212444087339181}
     collider: {fileID: 4326453021319142185}
-    isCanMotoring: 1
+    isCanMotoring: 0
     isCanSteering: 0
   mass: 3000
   maxMotorTorque: 1000
   maxSteeringAngle: 40
+--- !u!114 &5690001269709802853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050577955485111418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57237b80a81ff5409618f690ac3047b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 4050577955485111418}
 --- !u!1 &4254002374958826536
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ namespace Game.Systems
     public class CarController : MonoBehaviour
     {
 		public Rigidbody rigidbody;
+		public GameObject camera;
+		public List<GameObject> cars = new List<GameObject>();
 		[Space]
         public Wheel wheelFL;
         public Wheel wheelFR;
@@ -15,6 +17,7 @@ namespace Game.Systems
 		public float mass;
 		public float maxMotorTorque;
         public float maxSteeringAngle;
+		
 
 		//public DriveType drive = DriveType.Rear;
 
@@ -22,6 +25,7 @@ namespace Game.Systems
 
 		private void Start()
 		{
+			camera.SetActive(true);
 			wheels.Add(wheelFL);
 			wheels.Add(wheelFR);
 			wheels.Add(wheelBL);
